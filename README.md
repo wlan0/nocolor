@@ -13,19 +13,13 @@ Install nocolor
 #### Linux
 
 ```bash
-$> curl -s https://api.github.com/repos/wlan0/nocolor/releases/latest \
-	| jq -r ".assets[0].browser_download_url" \
-	| xargs wget -qO- \
-	| tar -xzf - releases/nocolor-linux-amd64 --strip-components=1; echo "nocolor installed to /usr/local/bin/nocolor"; sudo ./nocolor-linux-amd64
+$> curl -s https://api.github.com/repos/wlan0/nocolor/releases/latest | jq -r ".assets[0].browser_download_url" | xargs wget -qO- | tar --strip-components=1 -xzf - releases/nocolor-linux-amd64; echo "nocolor installing to /usr/local/bin/nocolor"; sudo mv ./nocolor-linux-amd64 /usr/local/bin/nocolor
 ```
 
 #### OSX
 
 ```bash
-$> curl -s https://api.github.com/repos/wlan0/nocolor/releases/latest \
-	| jq -r ".assets[0].browser_download_url" \ 
-	| xargs wget -qO- \
-	| tar -xzf - releases/nocolor-darwin-amd64 --strip-components=1; echo "nocolor installed to /usr/local/bin/nocolor"; sudo ./nocolor-darwin-amd64
+$> curl -s https://api.github.com/repos/wlan0/nocolor/releases/latest | jq -r ".assets[0].browser_download_url" | xargs wget -qO- | tar -xzf - releases/nocolor-darwin-amd64 --strip-components=1; echo "nocolor installing to /usr/local/bin/nocolor"; sudo mv ./nocolor-darwin-amd64 /usr/local/bin/nocolor
 ```
 
 Use it
